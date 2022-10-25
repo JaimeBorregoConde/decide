@@ -20,9 +20,10 @@ class CensusCreate(generics.ListCreateAPIView):
     def create(self, request, *args, **kwargs):
         voting_id = request.data.get('voting_id')
         voters = request.data.get('voters')
+        adscription = request.data.get('adscription')
         try:
             for voter in voters:
-                census = Census(voting_id=voting_id, voter_id=voter)
+                census = Census(voting_id=voting_id, voter_id=voter,adscription=adscription)
                 census.save()
         except IntegrityError:
             return Response('Error try to create census', status=ST_409)

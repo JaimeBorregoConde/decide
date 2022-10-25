@@ -3,9 +3,9 @@ import requests
 
 
 HOST = "http://localhost:8000"
-USER = "admin"
-PASS = "admin"
-VOTING = 1
+USER = "jaiborcon"
+PASS = "administrador"
+VOTING = 4
 
 
 def create_voters(filename):
